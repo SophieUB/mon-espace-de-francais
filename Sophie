@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sophie — Tutrice IA de français</title>
+
+  <style>
+    :root {
+      --bleu-fonce: #1D476E;
+      --bleu-clair: #74BACD;
+      --rose: #EE3167;
+      --fond: #F4F7FA;
+      --blanc: #FFFFFF;
+      --texte: #173047;
+      --gris: #667785;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texte);
+      background: var(--fond);
+    }
+
+    header {
+      padding: 26px 24px;
+      color: var(--blanc);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(238, 49, 103, 0.28), transparent 25%),
+        linear-gradient(135deg, var(--bleu-fonce), #102D49);
+    }
+
+    .conteneur {
+      width: min(1200px, calc(100% - 36px));
+      margin: auto;
+    }
+
+    .barre-haute {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .retour {
+      color: var(--blanc);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .titre {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 24px;
+      padding: 30px 0 60px;
+    }
+
+    .menu {
+      padding: 18px;
+      border-radius: 22px;
+      background: var(--blanc);
+      box-shadow: 0 12px 30px rgba(29, 71, 110, 0.12);
+    }
+
+    .menu h2 {
+      margin-top: 0;
+      color: var(--bleu-fonce);
+      font-size: 1.15rem;
+    }
+
+    .unite {
+      display: block;
+      margin-bottom: 10px;
+      padding: 13px 15px;
+      color: var(--texte);
+      font-weight: bold;
+      text-decoration: none;
+      border-left: 6px solid var(--bleu-clair);
+      border-radius: 12px;
+      background: #F3F8FA;
+    }
+
+    .unite.active {
+      color: var(--blanc);
+      background: var(--bleu-fonce);
+      border-left-color: var(--rose);
+    }
+
+    .chat {
+      overflow: hidden;
+      border-radius: 24px;
+      background: var(--blanc);
+      box-shadow: 0 12px 30px rgba(29, 71, 110, 0.12);
+    }
+
+    .chat-entete {
+      padding: 24px;
+      color: var(--blanc);
+      background: linear-gradient(135deg, var(--rose), #C72357);
+    }
+
+    .chat-entete h1 {
+      margin: 0 0 6px;
+      font-size: 2rem;
+    }
+
+    .chat-entete p {
+      margin: 0;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      padding: 20px;
+      background: #F8FAFC;
+    }
+
+    .action {
+      padding: 14px;
+      color: var(--bleu-fonce);
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid #DDE8EE;
+      border-radius: 14px;
+      background: var(--blanc);
+    }
+
+    .conversation {
+      min-height: 360px;
+      padding: 24px;
+      background:
+        linear-gradient(rgba(116, 186, 205, 0.08), rgba(116, 186, 205, 0.08)),
+        var(--blanc);
+    }
+
+    .message {
+      max-width: 760px;
+      padding: 18px;
+      border: 1px solid #CFE3EC;
+      border-radius: 18px;
+      background: #F7FCFE;
+    }
+
+    .message strong {
+      color: var(--bleu-fonce);
+    }
+
+    .zone-saisie {
+      padding: 20px;
+      border-top: 1px solid #E2E9ED;
+      background: var(--blanc);
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 110px;
+      padding: 16px;
+      font: inherit;
+      resize: vertical;
+      border: 1px solid #C9D8DF;
+      border-radius: 14px;
+    }
+
+    .boutons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 13px 20px;
+      font: inherit;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      border-radius: 13px;
+    }
+
+    .parler {
+      color: var(--bleu-fonce);
+      background: var(--bleu-clair);
+    }
+
+    .envoyer {
+      color: var(--blanc);
+      background: var(--rose);
+    }
+
+    .note {
+      margin: 14px 0 0;
+      color: var(--gris);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 850px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .actions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="conteneur barre-haute">
+      <a class="retour" href="index.html">← Retour à l’accueil</a>
+      <p class="titre">LAF3201 French 3 · Sophie IA</p>
+    </div>
+  </header>
+
+  <div class="conteneur">
+    <main>
+
+      <aside class="menu">
+        <h2>Contenu du cours</h2>
+
+        <a class="unite" href="#">Unité 0</a>
+        <a class="unite active" href="#">Unité 1</a>
+        <a class="unite" href="#">Unité 2</a>
+        <a class="unite" href="#">Unité 3</a>
+        <a class="unite" href="#">Unité 4</a>
+      </aside>
+
+      <section class="chat">
+
+        <div class="chat-entete">
+          <h1>Sophie, votre tutrice IA de français</h1>
+          <p>Pratiquez, révisez et posez vos questions sur le cours.</p>
+        </div>
+
+        <div class="actions">
+          <a class="action" href="#">Préparer la lecture</a>
+          <a class="action" href="#">Pratiquer le tutorat</a>
+          <a class="action" href="#">Réviser le vocabulaire</a>
+          <a class="action" href="#">Comprendre la grammaire</a>
+        </div>
+
+        <div class="conversation">
+          <div class="message">
+            <strong>Bonjour ! Comment puis-je vous aider ?</strong>
+
+            <p>
+              Vous pouvez me demander d’expliquer un point de grammaire,
+              de corriger une phrase, de vous faire pratiquer une situation
+              du cours ou de vous préparer à une évaluation.
+            </p>
+          </div>
+        </div>
+
+        <div class="zone-saisie">
+          <textarea
+            placeholder="Écrivez votre message ici…"></textarea>
+
+          <div class="boutons">
+            <button class="parler" type="button">Parler</button>
+            <button class="envoyer" type="button">Envoyer</button>
+          </div>
+
+          <p class="note">
+            La connexion à l’intelligence artificielle sera ajoutée ensuite.
+          </p>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
