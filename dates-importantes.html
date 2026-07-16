@@ -2,141 +2,217 @@
 <html lang="fr">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dates importantes</title>
+  <title>Dates importantes</title>
 
-<style>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #173047;
+      background: #F4F7FA;
+    }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#F4F7FA;
-    color:#173047;
-    margin:0;
-}
+    header {
+      padding: 50px 24px;
+      color: white;
+      background: #1D476E;
+    }
 
-header{
-    background:#1D476E;
-    color:white;
-    padding:50px;
-}
+    .conteneur {
+      width: min(1000px, calc(100% - 40px));
+      margin: auto;
+    }
 
-h1{
-    margin:0;
-    font-size:3rem;
-}
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 3.5rem);
+    }
 
-main{
-    max-width:1000px;
-    margin:auto;
-    padding:50px 20px;
-}
+    header p {
+      margin: 10px 0 0;
+      color: #DCECF3;
+    }
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.1);
-}
+    main {
+      padding: 50px 0 70px;
+    }
 
-th{
-    background:#1D476E;
-    color:white;
-    padding:16px;
-    text-align:left;
-}
+    h2 {
+      margin: 0 0 18px;
+      color: #1D476E;
+    }
 
-td{
-    padding:16px;
-    border-bottom:1px solid #E5E5E5;
-}
+    .section {
+      margin-bottom: 42px;
+    }
 
-tr:nth-child(even){
-    background:#F8FBFD;
-}
+    .tableau {
+      overflow-x: auto;
+      border-radius: 18px;
+      background: white;
+      box-shadow: 0 10px 25px rgba(29, 71, 110, 0.12);
+    }
 
-a{
-    display:inline-block;
-    margin-top:35px;
-    padding:15px 28px;
-    background:#74BACD;
-    color:#173047;
-    text-decoration:none;
-    border-radius:14px;
-    font-weight:bold;
-}
+    table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+    }
 
-</style>
+    th {
+      padding: 16px;
+      color: white;
+      text-align: left;
+      background: #1D476E;
+    }
 
+    td {
+      padding: 16px;
+      border-bottom: 1px solid #E5E5E5;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #F8FBFD;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .retour {
+      display: inline-block;
+      padding: 15px 28px;
+      color: #173047;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 14px;
+      background: #74BACD;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
+  <header>
+    <div class="conteneur">
+      <h1>Dates importantes</h1>
+      <p>LAF3201 French 3 – Semestre 1</p>
+    </div>
+  </header>
 
-<h1>Dates importantes</h1>
+  <main class="conteneur">
 
-<p>LAF3201 French 3 – Semestre 1</p>
+    <section class="section">
+      <h2>Les composantes du contrôle continu (CA)</h2>
 
-</header>
+      <div class="tableau">
+        <table>
+          <thead>
+            <tr>
+              <th>Composante</th>
+              <th>Pondération</th>
+            </tr>
+          </thead>
 
-<main>
+          <tbody>
+            <tr>
+              <td>Tests 1 et 2</td>
+              <td>40 %</td>
+            </tr>
 
-<table>
+            <tr>
+              <td>Oral (CO1, CO2 et test oral)</td>
+              <td>35 %</td>
+            </tr>
 
-<tr>
-<th>Semaine</th>
-<th>Événements</th>
-</tr>
+            <tr>
+              <td>Projet « Vlog »</td>
+              <td>10 %</td>
+            </tr>
 
-<tr>
-<td>1</td>
-<td>10 août – Jour de récupération (National Day) • Pas de cours</td>
-</tr>
+            <tr>
+              <td>Devoirs 1 et 2</td>
+              <td>10 %</td>
+            </tr>
 
-<tr>
-<td>3</td>
-<td>HW1 • Publication du devoir 1</td>
-</tr>
+            <tr>
+              <td>Présence aux cours et participation</td>
+              <td>5 %</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-<tr>
-<td>4</td>
-<td>Remise du devoir 1</td>
-</tr>
+    <section class="section">
+      <h2>Calendrier des évaluations</h2>
 
-<tr>
-<td>6</td>
-<td>HW2 • Publication du devoir 2</td>
-</tr>
+      <div class="tableau">
+        <table>
+          <thead>
+            <tr>
+              <th>Semaine</th>
+              <th>Événements</th>
+            </tr>
+          </thead>
 
-<tr>
-<td>7</td>
-<td>Oral • Test 1 (Unités 0 à 2 : grammaire, compréhension écrite et production écrite) • CO1 • Remise du devoir 2 </td>
-</tr>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>10 août – Jour de récupération (National Day) • Pas de cours</td>
+            </tr>
 
-<tr>
-<td>8</td>
-<td>9 octobre (Well-Being Day) • Pas de cours </td>
-</tr>
+            <tr>
+              <td>3</td>
+              <td>HW1 • Publication du devoir 1</td>
+            </tr>
 
-<tr>
-<td>13</td>
-<td>Oral • Test 2 (Unités 0 à 4 : grammaire, compréhension écrite et production écrite) • CO2</td>
-</tr>
+            <tr>
+              <td>4</td>
+              <td>Remise du devoir 1</td>
+            </tr>
 
-<tr>
-<td>14</td>
-<td>Remise du projet « Vlog »</td>
-</tr>
+            <tr>
+              <td>6</td>
+              <td>HW2 • Publication du devoir 2</td>
+            </tr>
 
-</table>
+            <tr>
+              <td>7</td>
+              <td>
+                Oral • Test 1 (Unités 0 à 2 : grammaire, compréhension écrite
+                et production écrite) • CO1 • Remise du devoir 2
+              </td>
+            </tr>
 
-<a href="index.html">← Retour à l'accueil</a>
+            <tr>
+              <td>8</td>
+              <td>9 octobre (Well-Being Day) • Pas de cours</td>
+            </tr>
 
-</main>
+            <tr>
+              <td>13</td>
+              <td>
+                Oral • Test 2 (Unités 0 à 4 : grammaire, compréhension écrite
+                et production écrite) • CO2
+              </td>
+            </tr>
+
+            <tr>
+              <td>14</td>
+              <td>Remise du projet « Vlog »</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <a class="retour" href="index.html">← Retour à l’accueil</a>
+
+  </main>
 
 </body>
 </html>
